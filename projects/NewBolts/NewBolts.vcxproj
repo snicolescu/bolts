@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2C2FFF2C-4049-4A47-9C16-BC1FC472AB19}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>NewBolts</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>..\..\dependencies\libs\$(Configuration);..\..\dependencies\libs\boost;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\include;..\..\dependencies;..\..\dependencies\Loki\include;$(VCInstallDir)include;$(WindowsSdkDir)include</IncludePath>
+    <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)\..\..\libs\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>..\..\dependencies\libs\$(Configuration);..\..\dependencies\libs\boost;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\..\include;..\..\dependencies;..\..\dependencies\Loki\include;$(VCInstallDir)include;$(WindowsSdkDir)include</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;BOLTS_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\include;..\..\dependencies;..\..\dependencies\SFML-2.0-rc\include;..\..\dependencies\Loki\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib</IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>opengl32.lib;GLFW.lib;OIS_static.lib;glew32.lib;libboost_thread-vc100-mt-gd-1_52.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;glew32.lib;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;GLFW.lib;OIS_static.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml.hpp" />
+    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml_iterators.hpp" />
+    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml_print.hpp" />
+    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml_utils.hpp" />
+    <ClInclude Include="..\..\include\Collada\Compilation.h" />
+    <ClInclude Include="..\..\include\Core\logger.h" />
+    <ClInclude Include="..\..\include\Core\math_types.h" />
+    <ClInclude Include="..\..\include\Core\SmartPointers.h" />
+    <ClInclude Include="..\..\include\Core\types.h" />
+    <ClInclude Include="..\..\include\Helpers\Camera.h" />
+    <ClInclude Include="..\..\include\Helpers\MeshBuilder.h" />
+    <ClInclude Include="..\..\include\Input\events.h" />
+    <ClInclude Include="..\..\include\IO\FileManager.h" />
+    <ClInclude Include="..\..\include\mesh.h" />
+    <ClInclude Include="..\..\include\Bolts3DWin.h" />
+    <ClInclude Include="..\..\include\RemoteControl\RemoteListener.h" />
+    <ClInclude Include="..\..\include\Rendering\Common\GPUVertexBufferBase.h" />
+    <ClInclude Include="..\..\include\Rendering\Common\RenderingCommon.h" />
+    <ClInclude Include="..\..\include\Rendering\GL\GLDriver.h" />
+    <ClInclude Include="..\..\include\Rendering\GL\GLSLProgramFwd.hpp" />
+    <ClInclude Include="..\..\include\Rendering\GL\GLVertexBuffer.h" />
+    <ClInclude Include="..\..\include\Rendering\GL\GLSLProgram.h" />
+    <ClInclude Include="..\..\include\Rendering\GL\GLVertexBufferFwd.hpp" />
+    <ClInclude Include="..\..\include\Rendering\GPUProgram.h" />
+    <ClInclude Include="..\..\include\Rendering\GPUProgramFwd.h" />
+    <ClInclude Include="..\..\include\Rendering\Rendering.h" />
+    <ClInclude Include="..\..\include\Rendering\ShaderCommons.h" />
+    <ClInclude Include="..\..\include\Rendering\VertexBuffer.hpp" />
+    <ClInclude Include="..\..\include\Rendering\VertexBufferFwd.h" />
+    <ClInclude Include="..\..\include\System\system.h" />
+    <ClInclude Include="..\..\include\System\system_win32.h" />
+    <ClInclude Include="..\..\include\System\Win32\system_win32_impl.h" />
+    <ClInclude Include="..\..\include\System\Win32\system_win32_impl_opengl.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\Core\helpers.h" />
+    <ClCompile Include="..\..\src\Collada\Compilation.cpp" />
+    <ClCompile Include="..\..\src\Core\logger.cpp" />
+    <ClCompile Include="..\..\src\Helpers\Camera.cpp" />
+    <ClCompile Include="..\..\src\Helpers\MeshBuilder.cpp" />
+    <ClCompile Include="..\..\src\IO\FileManager.cpp" />
+    <ClCompile Include="..\..\src\Rendering\GLVertexBuffer.cpp" />
+    <ClCompile Include="..\..\src\Rendering\GLDriver.cpp" />
+    <ClCompile Include="..\..\src\Rendering\GLSLProgram.cpp" />
+    <ClCompile Include="..\..\src\Rendering\GPUVertexBufferBase.cpp" />
+    <ClCompile Include="..\..\src\Rendering\Rendering.cpp" />
+    <ClCompile Include="..\..\src\System\system_win32.cpp" />
+    <ClCompile Include="..\..\src\System\Win32\system_win32_impl.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

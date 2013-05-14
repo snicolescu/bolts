@@ -1,0 +1,34 @@
+# XSI Wavefront OBJ Export v3.0
+# File Created: Mon Oct 29 00:15:19 2007
+# XSI Version: 6.02.2007.0613
+mtllib cube.mtl
+
+o cube
+# Hierarchy (from self to top father)
+g cube
+
+#begin 8 vertices
+v -1.000000 -1.000000 -1.000000
+v 1.000000 -1.000000 -1.000000
+v -1.000000 1.000000 -1.000000
+v 1.000000 1.000000 -1.000000
+v -1.000000 -1.000000 1.000000
+v 1.000000 -1.000000 1.000000
+v -1.000000 1.000000 1.000000
+v 1.000000 1.000000 1.000000
+#end 8 vertices
+
+#begin 6 faces
+usemtl material
+f 1 3 4 2
+usemtl material
+f 1 2 6 5 
+usemtl material
+f 1 5 7 3
+usemtl material
+f 2 4 8 6
+usemtl material
+f 3 7 8 4
+usemtl material
+f 5 6 8 7 
+#end 6 faces

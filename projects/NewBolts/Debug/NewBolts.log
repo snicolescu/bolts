@@ -1,0 +1,32 @@
+﻿Build started 5/13/2013 11:24:50 PM.
+     1>Project "D:\Bolts\projects\NewBolts\NewBolts.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\NewBolts.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\include /I..\..\dependencies /I"..\..\dependencies\SFML-2.0-rc\include" /I..\..\dependencies\Loki\include /ZI /nologo /W4 /WX /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D BOLTS_OPENGL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\src\Rendering\GLDriver.cpp -D_SCL_SECURE_NO_WARNINGS 
+         GLDriver.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"D:\Bolts\projects\NewBolts\\..\..\libs\Debug\NewBolts.lib" /NOLOGO Debug\helpers.obj
+         Debug\Compilation.obj
+         Debug\logger.obj
+         Debug\Camera.obj
+         Debug\MeshBuilder.obj
+         Debug\FileManager.obj
+         Debug\GLVertexBuffer.obj
+         Debug\GLDriver.obj
+         Debug\GLSLProgram.obj
+         Debug\GPUVertexBufferBase.obj
+         Debug\Rendering.obj
+         Debug\system_win32.obj
+         Debug\system_win32_impl.obj
+         Debug\stdafx.obj
+         NewBolts.vcxproj -> D:\Bolts\projects\NewBolts\\..\..\libs\Debug\NewBolts.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\NewBolts.unsuccessfulbuild".
+         Touching "Debug\NewBolts.lastbuildstate".
+     1>Done Building Project "D:\Bolts\projects\NewBolts\NewBolts.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.10

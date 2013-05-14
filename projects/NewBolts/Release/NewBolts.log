@@ -1,0 +1,16 @@
+﻿Build started 7/26/2012 10:42:31 PM.
+     1>Project "D:\Bolts\projects\NewBolts\NewBolts.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Release\NewBolts.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ID:\Bolts\dependencies\boost /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\NewBolts.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ID:\Bolts\dependencies\boost /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\NewBolts.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt NewBolts.cpp
+         NewBolts.cpp
+     1>NewBolts.cpp(6): fatal error C1083: Cannot open include file: 'boost/regex.hpp': No such file or directory
+     1>Done Building Project "D:\Bolts\projects\NewBolts\NewBolts.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.33

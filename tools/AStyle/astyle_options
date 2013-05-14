@@ -1,0 +1,16 @@
+#Also parse subfolders
+--recursive
+
+#Style Description
+--style=stroustrup
+--indent=tab
+--indent-classes
+--indent-switches
+--indent-namespaces
+--indent-preprocessor
+--indent-col1-comments
+--min-conditional-indent=0
+--pad-oper
+--pad-paren-in
+--add-brackets
+--align-pointer=name
