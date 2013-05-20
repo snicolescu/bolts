@@ -15,27 +15,8 @@
     <Filter Include="Source Files\Core">
       <UniqueIdentifier>{c30c1ad3-a3d9-4fa8-b14a-5cbac4d1fdcb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Header Files\Rendering">
-      <UniqueIdentifier>{23851580-cb30-49f5-be2b-5283ca4d1530}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Core">
-      <UniqueIdentifier>{2468991c-46a1-40ba-a105-c53e0187da3f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Input">
-      <UniqueIdentifier>{472d1d00-ded3-40de-a702-3b5a64752312}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Input">
       <UniqueIdentifier>{1974e79f-9d46-4901-903b-768c5b709026}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Rendering\GL">
-      <UniqueIdentifier>{1e09576b-7af1-4310-936e-84d6e3168af0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\IO">
-      <UniqueIdentifier>{d05a052e-3830-429e-bce4-645ca1fb0971}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\IO">
       <UniqueIdentifier>{a4125b0c-7497-47fa-9c34-0d8779aa09cf}</UniqueIdentifier>
@@ -43,20 +24,8 @@
     <Filter Include="Source Files\Rendering\GL">
       <UniqueIdentifier>{ad7a67ae-20f4-46c9-9639-e8aaca5202cc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\IO\RapidXML">
-      <UniqueIdentifier>{4a8ca5e6-4f79-4d1f-8bf9-22c754c0bdb1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Collada">
-      <UniqueIdentifier>{47a1aed6-6416-4a60-8860-0e042b716eb9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Collada">
       <UniqueIdentifier>{55d9aa70-f965-4263-81a9-dcf53371c91c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\System">
-      <UniqueIdentifier>{baa12b50-5f46-430e-b95a-eda4869b065f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\System\Win32">
-      <UniqueIdentifier>{ddafcce3-f888-4ed8-bdfb-07b9628349f0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\System">
       <UniqueIdentifier>{b662eb8a-8d3d-45af-b3df-81cef6f0676c}</UniqueIdentifier>
@@ -64,130 +33,100 @@
     <Filter Include="Source Files\System\Win32">
       <UniqueIdentifier>{1c801677-fe90-4073-ba4a-a87d0c3a4eda}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Rendering\Common">
-      <UniqueIdentifier>{5c14c678-907c-4e19-b434-171390743cc3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Rendering\Common">
       <UniqueIdentifier>{d48575d6-3b0d-4530-b8bc-938e09fb6a54}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\RemoteControl">
-      <UniqueIdentifier>{f6210e87-0862-45cf-b33d-28609a362a49}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Helpers">
-      <UniqueIdentifier>{c7e4aaf2-dc7e-4599-a239-a6f1bd02459d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Helpers">
       <UniqueIdentifier>{528cb27a-b663-4134-befe-3b3e79494d7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RemoteControl">
+      <UniqueIdentifier>{968eb82b-9593-4512-ac0a-e7b6e2c03389}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\..\src\System\system.h">
+      <Filter>Source Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\..\src\System\system_win32.h">
+      <Filter>Source Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Bolts3DWin.h">
-      <Filter>Header Files\Rendering</Filter>
+    <ClInclude Include="..\..\src\System\Win32\system_win32_impl.h">
+      <Filter>Source Files\System\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\mesh.h">
-      <Filter>Header Files\Rendering</Filter>
+    <ClInclude Include="..\..\src\System\Win32\system_win32_impl_opengl.h">
+      <Filter>Source Files\System\Win32</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Core\math_types.h">
-      <Filter>Header Files\Core</Filter>
+    <ClInclude Include="..\..\src\Rendering\Common\GPUVertexBufferBase.h">
+      <Filter>Source Files\Rendering\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Core\types.h">
-      <Filter>Header Files\Core</Filter>
+    <ClInclude Include="..\..\src\Rendering\Common\RenderingCommon.h">
+      <Filter>Source Files\Rendering\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Core\logger.h">
-      <Filter>Header Files\Core</Filter>
+    <ClInclude Include="..\..\src\Rendering\GL\GLDriver.h">
+      <Filter>Source Files\Rendering\GL</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\Rendering.h">
-      <Filter>Header Files\Rendering</Filter>
+    <ClInclude Include="..\..\src\Rendering\GL\GLSLProgram.h">
+      <Filter>Source Files\Rendering\GL</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\IO\FileManager.h">
-      <Filter>Header Files\IO</Filter>
+    <ClInclude Include="..\..\src\Rendering\GL\GLSLProgramFwd.hpp">
+      <Filter>Source Files\Rendering\GL</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\GL\GLSLProgram.h">
-      <Filter>Header Files\Rendering\GL</Filter>
+    <ClInclude Include="..\..\src\Rendering\GL\GLVertexBuffer.h">
+      <Filter>Source Files\Rendering\GL</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\ShaderCommons.h">
-      <Filter>Header Files\Rendering</Filter>
+    <ClInclude Include="..\..\src\Rendering\GL\GLVertexBufferFwd.hpp">
+      <Filter>Source Files\Rendering\GL</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml.hpp">
-      <Filter>Header Files\IO\RapidXML</Filter>
+    <ClInclude Include="..\..\src\Rendering\GPUProgram.h">
+      <Filter>Source Files\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml_iterators.hpp">
-      <Filter>Header Files\IO\RapidXML</Filter>
+    <ClInclude Include="..\..\src\Rendering\GPUProgramFwd.h">
+      <Filter>Source Files\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml_print.hpp">
-      <Filter>Header Files\IO\RapidXML</Filter>
+    <ClInclude Include="..\..\src\Rendering\Rendering.h">
+      <Filter>Source Files\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml_utils.hpp">
-      <Filter>Header Files\IO\RapidXML</Filter>
+    <ClInclude Include="..\..\src\Rendering\VertexBuffer.hpp">
+      <Filter>Source Files\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Collada\Compilation.h">
-      <Filter>Header Files\Collada</Filter>
+    <ClInclude Include="..\..\src\Rendering\VertexBufferFwd.h">
+      <Filter>Source Files\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\System\Win32\system_win32_impl.h">
-      <Filter>Header Files\System\Win32</Filter>
+    <ClInclude Include="..\..\src\RemoteControl\RemoteListener.h">
+      <Filter>Source Files\RemoteControl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\System\system_win32.h">
-      <Filter>Header Files\System</Filter>
+    <ClInclude Include="..\..\src\IO\FileManager.h">
+      <Filter>Source Files\IO</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Input\events.h">
-      <Filter>Header Files\Input</Filter>
+    <ClInclude Include="..\..\src\Input\IOEvents.h">
+      <Filter>Source Files\Input</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\System\system.h">
-      <Filter>Header Files\System</Filter>
+    <ClInclude Include="..\..\src\Helpers\Camera.h">
+      <Filter>Source Files\Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\System\Win32\system_win32_impl_opengl.h">
-      <Filter>Header Files\System\Win32</Filter>
+    <ClInclude Include="..\..\src\Helpers\MeshBuilder.h">
+      <Filter>Source Files\Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\RemoteControl\RemoteListener.h">
-      <Filter>Header Files\RemoteControl</Filter>
+    <ClInclude Include="..\..\src\Core\helpers.h">
+      <Filter>Source Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\GL\GLDriver.h">
-      <Filter>Header Files\Rendering\GL</Filter>
+    <ClInclude Include="..\..\src\Core\logger.h">
+      <Filter>Source Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\Common\GPUVertexBufferBase.h">
-      <Filter>Header Files\Rendering\Common</Filter>
+    <ClInclude Include="..\..\src\Core\math_types.h">
+      <Filter>Source Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\GL\GLVertexBuffer.h">
-      <Filter>Header Files\Rendering\GL</Filter>
+    <ClInclude Include="..\..\src\Core\SmartPointers.h">
+      <Filter>Source Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Core\SmartPointers.h">
-      <Filter>Header Files\Core</Filter>
+    <ClInclude Include="..\..\src\Core\types.h">
+      <Filter>Source Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\GL\GLSLProgramFwd.hpp">
-      <Filter>Header Files\Rendering\GL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\GL\GLVertexBufferFwd.hpp">
-      <Filter>Header Files\Rendering\GL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\Common\RenderingCommon.h">
-      <Filter>Header Files\Rendering\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\VertexBuffer.hpp">
-      <Filter>Header Files\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\VertexBufferFwd.h">
-      <Filter>Header Files\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\GPUProgram.h">
-      <Filter>Header Files\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\Rendering\GPUProgramFwd.h">
-      <Filter>Header Files\Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\Helpers\Camera.h">
-      <Filter>Header Files\Helpers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\Helpers\MeshBuilder.h">
-      <Filter>Header Files\Helpers</Filter>
+    <ClInclude Include="..\..\src\Collada\Compilation.h">
+      <Filter>Source Files\Collada</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -196,12 +135,6 @@
     </ClCompile>
     <ClCompile Include="..\..\src\IO\FileManager.cpp">
       <Filter>Source Files\IO</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\include\Core\helpers.h">
-      <Filter>Header Files\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Rendering\GLSLProgram.cpp">
-      <Filter>Source Files\Rendering\GL</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Collada\Compilation.cpp">
       <Filter>Source Files\Collada</Filter>
@@ -218,20 +151,23 @@
     <ClCompile Include="..\..\src\System\Win32\system_win32_impl.cpp">
       <Filter>Source Files\System\Win32</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Rendering\GLDriver.cpp">
-      <Filter>Source Files\Rendering\GL</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\Rendering\GPUVertexBufferBase.cpp">
       <Filter>Source Files\Rendering\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Rendering\GLVertexBuffer.cpp">
-      <Filter>Source Files\Rendering\GL</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Helpers\Camera.cpp">
       <Filter>Source Files\Helpers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Helpers\MeshBuilder.cpp">
       <Filter>Source Files\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Rendering\GL\GLDriver.cpp">
+      <Filter>Source Files\Rendering\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Rendering\GL\GLSLProgram.cpp">
+      <Filter>Source Files\Rendering\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Rendering\GL\GLVertexBuffer.cpp">
+      <Filter>Source Files\Rendering\GL</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

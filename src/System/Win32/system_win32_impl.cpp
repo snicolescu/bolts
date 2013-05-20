@@ -420,7 +420,7 @@ namespace Bolts {
 			RECT rect;
 			GetClientRect( ( HWND ) handle, &rect );
 
-			return dimension2d_t( (uint16_t) (rect.right - rect.left), (uint16_t) (rect.bottom - rect.top) );
+			return dimension2d_t( ( uint16_t ) ( rect.right - rect.left ), ( uint16_t ) ( rect.bottom - rect.top ) );
 		}
 
 		std::vector<dimension2d_t> Win32SystemImpl::GetSupportedDisplayModes() const
@@ -429,20 +429,20 @@ namespace Bolts {
 			std::vector<dimension2d_t> resolutions;
 
 			EnumDisplaySettings( NULL, 0, &result );
-			resolutions.push_back ( dimension2d_t( (uint16_t) result.dmPelsWidth, (uint16_t) result.dmPelsHeight ) );
+			resolutions.push_back ( dimension2d_t( ( uint16_t ) result.dmPelsWidth, ( uint16_t ) result.dmPelsHeight ) );
 			int i = 1;
 			while ( EnumDisplaySettings( NULL, i, &result ) ) {
 				if ( result.dmBitsPerPel == 32 &&
 				     ( result.dmPelsWidth != resolutions.back ().width &&
 				       result.dmPelsHeight != resolutions.back ().height ) ) {
-					resolutions.push_back ( dimension2d_t( (uint16_t) result.dmPelsWidth, (uint16_t) result.dmPelsHeight ) );
+					resolutions.push_back ( dimension2d_t( ( uint16_t ) result.dmPelsWidth, ( uint16_t ) result.dmPelsHeight ) );
 				}
 				i++;
 			}
 			return resolutions;
 		}
 
-		bool Win32SystemImpl::EnableFullscreen( windowHandle_t handle, dimension2d_t resolution)//, bool vsync /*= false*/ )
+		bool Win32SystemImpl::EnableFullscreen( windowHandle_t handle, dimension2d_t resolution ) //, bool vsync /*= false*/ )
 		{
 			if ( m_fullscreenWindow != NULL ) {
 				//TODO LOG: Failed to change display mode to fullscreen.
@@ -507,16 +507,16 @@ namespace Bolts {
 			graphicsContext.Initialize();
 		}
 
-		bool Win32SystemImpl::CreateGraphicsContext( windowHandle_t handle)
+		bool Win32SystemImpl::CreateGraphicsContext( windowHandle_t handle )
 		{
-			assert( m_bIsInitialized);
+			assert( m_bIsInitialized );
 
-			return graphicsContext.CreateContext ( (HWND) handle);
+			return graphicsContext.CreateContext ( ( HWND ) handle );
 		}
 
 		void Win32SystemImpl::DestroyGraphicsContext()
 		{
-			assert( m_bIsInitialized);
+			assert( m_bIsInitialized );
 
 			graphicsContext.DestroyContext ();
 		}

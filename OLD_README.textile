@@ -1,0 +1,49 @@
+h1. Bolts
+
+Right now, it can't possibly be called a Engine.
+
+It has no I/O functionality whatsoever( no File I/O or User Input), Shader Management is currently done using OGL Bible 5's GLTools, and there's no Resource Management at all.
+
+-Basically, all I've done is a add a simple Mesh class, a WIP Particle System, and OpenGL3.2+ and OpenGLES2.0 renderers.-
+Classes so far
+* Static Mesh
+* Simple Particle System
+* Camera base class and a Orbit Camera
+* Simple Scene manager with Scene Nodes
+* Simple Material System
+* OpenGL Renderer
+* OGL ES2 Renderer
+
+UPDATE1: I've added a basic Scene Manager and Object interface. Also, a Static Mesh object.
+UPDATE2: Included a camera class and OIS input handling(Windows only).
+
+2012 - March 20th: Issues with phone prevent me from doing any testing on actual hardware. I can only check to see if thing compile properly.
+
+2012 - April 7th: Added support for basic materials. Also tested texture loading with SOIL. It works, BTW. The windows demo can now take screenshots [F12]. Saved in game_screen.bmp in the project folder.
+
+h3. Dependencies
+
+First of all, I have not included boost in the dependencies folder because of it's size.
+Bolts will compile with an out-of-the box download of boost. Simply copy the folder <Boost-root>/boost/ from your boost download to <Bolts-root>/dependencies/boost
+
+GLMath for any 3D math, since it's portable and header-only.
+I have tested SOIL (Simple OpenGL Image Library) on windows and it works great (from a functionality perspective). It's not very configurable right now, but I think I can crop together a decent image loader from it.
+So, SOIL for texture loading. Not tested on Android yet.
+
+The ResourceManagers use boost::shared_ptr, but this dependency may be replaced with my own implementation of shared_ptr, or (if the gcc compiler bundled with the NDK wills it) with the C++11 implementation
+
+For user input I plan on using OIS (Open Input System http://sourceforge.net/projects/wgois/), which I think is portable to Android, so it will have the same input code on both devices.
+
+Other than that, at the moment shader management uses GLTools, but that will all be replaced soon once I add my own management.
+
+Also, the windows demo uses FreeGLUT for window management.
+
+h3. Other Notes
+
+There are project files for Visual C++ 2010 and an Eclipse Android Project( with prebuilt C++ source lib) in the folder /projects.
+
+I've included precompiled demos for Windows and Android in the folder Demos.
+They are extremely basic. For now.
+
+The Windows Demo requires a OGL 3.2+ Graphics card since the renderer uses VBOs.
+The Android Demo requires Android2.2+ because of the OGLES2.0 renderer.

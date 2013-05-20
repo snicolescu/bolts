@@ -152,13 +152,14 @@ public:
 			val = 0.f;
 
 		Camera cam;
-		cam.SetPosition ( vec3( 0.f, 0.f, -7.f));
+		cam.SetPosition ( vec3( 0.f, 0.f, 7.f));
 		cam.SetTarget (	vec3( 0.f, 0.f, 0.f));
 		cam.SetUpVector ( vec3(0.f, 1.f, 0.f));
 
 		mat4 worldMatrix(1.f);
 		//worldMatrix = glm::translate ( worldMatrix, vec3( 0.f, 0.f, val));
-		worldMatrix = glm::rotate ( worldMatrix, val*360.f, vec3( 1.f, 0.f, 0.f));
+		worldMatrix = glm::rotate ( worldMatrix, val*360.f, vec3( 0.f, 1.f, 0.f));
+		//worldMatrix = glm::rotate ( worldMatrix, -180.f, vec3( 1.f, 0.f, 0.f));
 
 		m_wvpMatrix = cam.GetProjectionMatrix() * cam.GetViewMatrix() * worldMatrix;
 		updateUniforms ();

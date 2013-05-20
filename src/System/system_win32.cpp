@@ -82,10 +82,10 @@ namespace Bolts {
 			return m_impl->GetSupportedDisplayModes();
 		}
 
-		bool Win32System::EnableFullscreen( windowHandle_t handle, dimension2d_t resolution)//, bool vsync /*= false*/ )
+		bool Win32System::EnableFullscreen( windowHandle_t handle, dimension2d_t resolution ) //, bool vsync /*= false*/ )
 		{
 
-			return m_impl->EnableFullscreen( handle, resolution);//, vsync );
+			return m_impl->EnableFullscreen( handle, resolution ); //, vsync );
 		}
 
 		void Win32System::DisableFullscreen()
@@ -93,9 +93,9 @@ namespace Bolts {
 			m_impl->DisableFullscreen();
 		}
 
-		bool Win32System::CreateGraphicsContext( windowHandle_t handle)
+		bool Win32System::CreateGraphicsContext( windowHandle_t handle )
 		{
-			return m_impl->CreateGraphicsContext (handle);
+			return m_impl->CreateGraphicsContext ( handle );
 		}
 
 		void Win32System::DestroyGraphicsContext()

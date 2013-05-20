@@ -56,7 +56,7 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;BOLTS_OPENGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\include;..\..\dependencies;..\..\dependencies\SFML-2.0-rc\include;..\..\dependencies\Loki\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\src;..\..\dependencies;..\..\dependencies\SFML-2.0-rc\include;..\..\dependencies\Loki\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWarningAsError>true</TreatWarningAsError>
       <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
@@ -86,7 +86,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;glew32.lib;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\src;..\..\dependencies;..\..\dependencies\SFML-2.0-rc\include;..\..\dependencies\Loki\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -100,52 +100,43 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml.hpp" />
-    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml_iterators.hpp" />
-    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml_print.hpp" />
-    <ClInclude Include="..\..\dependencies\rapidxml\rapidxml_utils.hpp" />
-    <ClInclude Include="..\..\include\Collada\Compilation.h" />
-    <ClInclude Include="..\..\include\Core\logger.h" />
-    <ClInclude Include="..\..\include\Core\math_types.h" />
-    <ClInclude Include="..\..\include\Core\SmartPointers.h" />
-    <ClInclude Include="..\..\include\Core\types.h" />
-    <ClInclude Include="..\..\include\Helpers\Camera.h" />
-    <ClInclude Include="..\..\include\Helpers\MeshBuilder.h" />
-    <ClInclude Include="..\..\include\Input\events.h" />
-    <ClInclude Include="..\..\include\IO\FileManager.h" />
-    <ClInclude Include="..\..\include\mesh.h" />
-    <ClInclude Include="..\..\include\Bolts3DWin.h" />
-    <ClInclude Include="..\..\include\RemoteControl\RemoteListener.h" />
-    <ClInclude Include="..\..\include\Rendering\Common\GPUVertexBufferBase.h" />
-    <ClInclude Include="..\..\include\Rendering\Common\RenderingCommon.h" />
-    <ClInclude Include="..\..\include\Rendering\GL\GLDriver.h" />
-    <ClInclude Include="..\..\include\Rendering\GL\GLSLProgramFwd.hpp" />
-    <ClInclude Include="..\..\include\Rendering\GL\GLVertexBuffer.h" />
-    <ClInclude Include="..\..\include\Rendering\GL\GLSLProgram.h" />
-    <ClInclude Include="..\..\include\Rendering\GL\GLVertexBufferFwd.hpp" />
-    <ClInclude Include="..\..\include\Rendering\GPUProgram.h" />
-    <ClInclude Include="..\..\include\Rendering\GPUProgramFwd.h" />
-    <ClInclude Include="..\..\include\Rendering\Rendering.h" />
-    <ClInclude Include="..\..\include\Rendering\ShaderCommons.h" />
-    <ClInclude Include="..\..\include\Rendering\VertexBuffer.hpp" />
-    <ClInclude Include="..\..\include\Rendering\VertexBufferFwd.h" />
-    <ClInclude Include="..\..\include\System\system.h" />
-    <ClInclude Include="..\..\include\System\system_win32.h" />
-    <ClInclude Include="..\..\include\System\Win32\system_win32_impl.h" />
-    <ClInclude Include="..\..\include\System\Win32\system_win32_impl_opengl.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
+    <ClInclude Include="..\..\src\Collada\Compilation.h" />
+    <ClInclude Include="..\..\src\Core\helpers.h" />
+    <ClInclude Include="..\..\src\Core\logger.h" />
+    <ClInclude Include="..\..\src\Core\math_types.h" />
+    <ClInclude Include="..\..\src\Core\SmartPointers.h" />
+    <ClInclude Include="..\..\src\Core\types.h" />
+    <ClInclude Include="..\..\src\Helpers\Camera.h" />
+    <ClInclude Include="..\..\src\Helpers\MeshBuilder.h" />
+    <ClInclude Include="..\..\src\Input\IOEvents.h" />
+    <ClInclude Include="..\..\src\IO\FileManager.h" />
+    <ClInclude Include="..\..\src\RemoteControl\RemoteListener.h" />
+    <ClInclude Include="..\..\src\Rendering\Common\GPUVertexBufferBase.h" />
+    <ClInclude Include="..\..\src\Rendering\Common\RenderingCommon.h" />
+    <ClInclude Include="..\..\src\Rendering\GL\GLDriver.h" />
+    <ClInclude Include="..\..\src\Rendering\GL\GLSLProgram.h" />
+    <ClInclude Include="..\..\src\Rendering\GL\GLSLProgramFwd.hpp" />
+    <ClInclude Include="..\..\src\Rendering\GL\GLVertexBuffer.h" />
+    <ClInclude Include="..\..\src\Rendering\GL\GLVertexBufferFwd.hpp" />
+    <ClInclude Include="..\..\src\Rendering\GPUProgram.h" />
+    <ClInclude Include="..\..\src\Rendering\GPUProgramFwd.h" />
+    <ClInclude Include="..\..\src\Rendering\Rendering.h" />
+    <ClInclude Include="..\..\src\Rendering\VertexBuffer.hpp" />
+    <ClInclude Include="..\..\src\Rendering\VertexBufferFwd.h" />
+    <ClInclude Include="..\..\src\System\system.h" />
+    <ClInclude Include="..\..\src\System\system_win32.h" />
+    <ClInclude Include="..\..\src\System\Win32\system_win32_impl.h" />
+    <ClInclude Include="..\..\src\System\Win32\system_win32_impl_opengl.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\include\Core\helpers.h" />
     <ClCompile Include="..\..\src\Collada\Compilation.cpp" />
     <ClCompile Include="..\..\src\Core\logger.cpp" />
     <ClCompile Include="..\..\src\Helpers\Camera.cpp" />
     <ClCompile Include="..\..\src\Helpers\MeshBuilder.cpp" />
     <ClCompile Include="..\..\src\IO\FileManager.cpp" />
-    <ClCompile Include="..\..\src\Rendering\GLVertexBuffer.cpp" />
-    <ClCompile Include="..\..\src\Rendering\GLDriver.cpp" />
-    <ClCompile Include="..\..\src\Rendering\GLSLProgram.cpp" />
+    <ClCompile Include="..\..\src\Rendering\GL\GLDriver.cpp" />
+    <ClCompile Include="..\..\src\Rendering\GL\GLSLProgram.cpp" />
+    <ClCompile Include="..\..\src\Rendering\GL\GLVertexBuffer.cpp" />
     <ClCompile Include="..\..\src\Rendering\GPUVertexBufferBase.cpp" />
     <ClCompile Include="..\..\src\Rendering\Rendering.cpp" />
     <ClCompile Include="..\..\src\System\system_win32.cpp" />

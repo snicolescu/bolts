@@ -14,7 +14,7 @@ size_t Bolts::IO::readFromFileAsText( const char *filename, char *textBuffer, si
 	file.read( textBuffer, textBufferLen );
 	std::streamsize read = file.gcount();
 	textBuffer[ read ] = '\0';
-	return (size_t) read;
+	return ( size_t ) read;
 }
 
 size_t Bolts::IO::fileSize( const char *filename )
@@ -25,5 +25,5 @@ size_t Bolts::IO::fileSize( const char *filename )
 		return 0;
 	}
 	in.seekg( 0, std::ifstream::end );
-	return (size_t) in.tellg();
+	return ( size_t ) in.tellg();
 }

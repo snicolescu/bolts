@@ -5,12 +5,12 @@
 using namespace Bolts;
 
 
-Bolts::Rendering::GPUVertexBufferBase::GPUVertexBufferBase() : m_bufferData( NULL ), m_bufferSize( 0 ), m_isDirty( false ), m_description(),m_usage(BUH_STATIC_DRAW)
+Bolts::Rendering::GPUVertexBufferBase::GPUVertexBufferBase() : m_bufferData( NULL ), m_bufferSize( 0 ), m_isDirty( false ), m_description(), m_usage( BUH_STATIC_DRAW )
 {
 
 }
 
-Bolts::Rendering::GPUVertexBufferBase::GPUVertexBufferBase( const GPUBufferDescription &desc ) : m_bufferData( NULL ), m_bufferSize( 0 ), m_isDirty( false ), m_description(desc)
+Bolts::Rendering::GPUVertexBufferBase::GPUVertexBufferBase( const GPUBufferDescription &desc ) : m_bufferData( NULL ), m_bufferSize( 0 ), m_isDirty( false ), m_description( desc )
 {
 
 }
@@ -20,36 +20,36 @@ Rendering::GPUVertexBufferBase::~GPUVertexBufferBase()
 	SAFE_FREE( m_bufferData );
 }
 
-bool Rendering::GPUVertexBufferBase::SetData(BufferUsageHint usage, void *source, size_t dataSize, bool makeCopy /*= true*/ )
+bool Rendering::GPUVertexBufferBase::SetData( BufferUsageHint usage, void *source, size_t dataSize, bool makeCopy /*= true*/ )
 {
 	if ( makeCopy ) {
 		//TODO USABILITY: Memory Managed alloc, easier to keep track of data
 		//TODO PERF: Memory Pool
-		if ( m_bufferSize != dataSize){
-			SAFE_FREE(m_bufferData)
+		if ( m_bufferSize != dataSize ) {
+			SAFE_FREE( m_bufferData )
 			m_bufferData = malloc( dataSize );
 
-			if (m_bufferData == NULL){
+			if ( m_bufferData == NULL ) {
 				//TODO LOG: Could not allocate data for GPU Buffer
 				return false;
 			}
 		}
 		memcpy( m_bufferData, source, dataSize );
 	} else {
-		SAFE_FREE(m_bufferData)
+		SAFE_FREE( m_bufferData )
 		m_bufferData = source;
 	}
 
 	m_usage = usage;
 	m_bufferSize = dataSize;
 	m_isDirty = true;
-	
+
 	return true;
 }
 
 void Bolts::Rendering::GPUVertexBufferBase::ClearData()
 {
-	SAFE_FREE(m_bufferData);
+	SAFE_FREE( m_bufferData );
 	m_bufferSize = 0;
 	m_isDirty = false;
 }
@@ -87,7 +87,7 @@ void Rendering::GPUBufferDescription::RecomputeStride() const
 	m_strideDirty = false;
 }
 
-const Rendering::GPUBufferDescription::stream_map_t& Rendering::GPUBufferDescription::GetStreams() const
+const Rendering::GPUBufferDescription::stream_map_t &Rendering::GPUBufferDescription::GetStreams() const
 {
 	return m_streamMap;
 }

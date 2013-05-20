@@ -14,7 +14,7 @@ Bolts::ConsoleLog &Bolts::ConsoleLog::operator<<( Bolts::Console::Color col )
 #ifdef WIN32
 	HANDLE hConsole;
 	hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
-	SetConsoleTextAttribute( hConsole, (WORD) col );
+	SetConsoleTextAttribute( hConsole, ( WORD ) col );
 #endif
 	return *this;
 }
